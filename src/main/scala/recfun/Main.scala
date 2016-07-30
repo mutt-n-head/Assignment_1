@@ -9,6 +9,8 @@ object Main {
                 print(pascal(col, row) + " ")
             println()
         }
+
+        println("Call for product returned:  " + product(x => x + 2)(2, 3))
     }
 
   /**
@@ -72,4 +74,19 @@ object Main {
             countChange(money, coins.tail);
         }
     }
-  }
+
+    /**
+      * This is an example of a currying function.
+      *
+      * @param f
+      * @param a
+      * @param b
+      * @return
+      */
+    def product(f: Int => Int)(a: Int, b: Int): Int = {
+        if (a > b)
+            1
+        else
+            f(a) * product(f)(a + 1, b)
+    }
+}
