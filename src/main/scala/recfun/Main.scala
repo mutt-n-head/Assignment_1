@@ -1,5 +1,9 @@
 package recfun
 
+/**
+  * Assignment 1 main class.
+  *
+  */
 object Main {
     def main(args: Array[String]) {
         println("Pascal's Triangle")
